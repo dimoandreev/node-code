@@ -53,7 +53,7 @@ export class LoginComponent {
         next: (response) => {
           this.isLoading = false;
           this.snackBar.open('Login successful!', 'Close', { duration: 3000 });
-          this.router.navigate(['/']); // Navigate to home or dashboard
+          this.router.navigate(['/home']); // Navigate to home dashboard
         },
         error: (error) => {
           this.isLoading = false;

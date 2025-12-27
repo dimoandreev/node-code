@@ -1,0 +1,63 @@
+<div class="home-container">
+    <mat-toolbar color="primary" class="header">
+        <div class="logo-area">
+            <mat-icon>dashboard</mat-icon>
+            <span>App Dashboard</span>
+        </div>
+        <span class="spacer"></span>
+        <div class="user-info" *ngIf="user">
+            <span class="username">{{ user.username }}</span>
+            <button mat-icon-button (click)="logout()" title="Logout">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+
+    <main class="content">
+        <div class="welcome-section">
+            <h1>Welcome back, {{ user?.username }}!</h1>
+            <p>You have successfully authenticated to the application.</p>
+        </div>
+
+        <div class="grid">
+            <mat-card class="action-card">
+                <mat-card-header>
+                    <mat-icon mat-card-avatar>person</mat-icon>
+                    <mat-card-title>Profile Information</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p><strong>Username:</strong> {{ user?.username }}</p>
+                    <p><strong>Email:</strong> {{ user?.email }}</p>
+                    <p><strong>User ID:</strong> {{ user?.id }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="primary">EDIT PROFILE</button>
+                </mat-card-actions>
+            </mat-card>
+
+            <mat-card class="action-card">
+                <mat-card-header>
+                    <mat-icon mat-card-avatar>security</mat-icon>
+                    <mat-card-title>Security Status</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Your account is protected with JWT authentication and password hashing.</p>
+                    <div class="status-badge">Secure</div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="action-card">
+                <mat-card-header>
+                    <mat-icon mat-card-avatar>settings</mat-icon>
+                    <mat-card-title>Quick Actions</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Access your settings and application preferences here.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="primary">SETTINGS</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </main>
+</div>
